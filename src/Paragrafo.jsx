@@ -1,12 +1,26 @@
-import cow from './assets/cow.webp'
+import { useState } from "react";
 
-function Paragrafo() {
-    return (
-        <>
-            <p>Parágrafo explicativo</p>
-            <p><img src={cow} alt="Cow" width={250} height={250} /></p>
-        </>
-    )
-}
+const Paragrafo = ({ nome }) => {
+  const [pontos, setPontos] = useState(0);
 
-export default Paragrafo
+  const aumentarPontos = () => {
+    setPontos(pontos + 1);
+  };
+
+  const diminuirPontos = () => {
+    if (pontos <= 0) return
+    setPontos(pontos - 1);
+  };
+
+  return (
+    <div>
+      <button onClick={diminuirPontos}>-</button>
+      <p>
+        {nome} tem {pontos} pontos.
+      </p>
+      <button onClick={aumentarPontos}>+</button>
+    </div>
+  );
+};
+
+export default Paragrafo;
