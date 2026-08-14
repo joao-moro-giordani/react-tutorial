@@ -1,15 +1,14 @@
-import React from 'react'
-import TarefasItem from './TarefasItem'
+import React from "react";
+import TarefasItem from "./TarefasItem";
 
-const TarefasLista = ({ tarefas }) => {
+const TarefasLista = ({ tarefas, onEditTarefa, onDeleteTarefa }) => {
   return (
     <ul>
-        {tarefas.map((tarefa) => {
-            return <TarefasItem key={tarefa.id} tarefa={tarefa}/>
-        })}
-        
+      {tarefas.map((tarefa) => (
+        <TarefasItem key={tarefa.id} tarefa={tarefa} onEditTarefa={onEditTarefa} onDeleteTarefa={onDeleteTarefa}/>
+      ))}
     </ul>
-  )
-}
+  );
+};
 
-export default TarefasLista
+export default TarefasLista;
