@@ -1,0 +1,13 @@
+.dark {
+    background-color: #121212;
+    color: #ffffff;
+}
+.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button.dark{
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
