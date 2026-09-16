@@ -6,6 +6,7 @@ import'./tema.css';
 import Home from "./pages/Home";
 import AppTarefas from "./pages/tarefas/AppTarefas";
 import Sobre from "./pages/Sobre";
+import Usuarios from "./pages/Usuarios";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/tarefas">Tarefas</Link></li>
               <li><Link to="/sobre">Sobre</Link></li>
+              <li><Link to="/usuarios">Usuários</Link></li>
             </ul>
           </nav>
           <ThemeToggleButton />
@@ -26,6 +28,7 @@ function App() {
           <Routes>
             <Route   path="/" element={<Home />} />
             <Route path="/tarefas" element={<AppTarefas />} />
+            <Route path="/usuarios" element={<Usuarios />} />
             <Route path="/sobre" element={<Sobre />} />
           </Routes>
         </div>
