@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import AppTarefas from "./pages/tarefas/AppTarefas";
 import Sobre from "./pages/Sobre";
 import Usuarios from "./pages/Usuarios";
+import UsuarioDetalhe from "./pages/UsuarioDetalhe";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
             <Route path="/tarefas" element={<AppTarefas />} />
             <Route path="/usuarios" element={<Usuarios />} />
             <Route path="/sobre" element={<Sobre />} />
+
+            <Route path="/usuarios/:id" element={<UsuarioDetalhe />} />
           </Routes>
         </div>
       </BrowserRouter>

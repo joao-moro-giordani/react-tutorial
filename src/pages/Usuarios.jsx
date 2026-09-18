@@ -1,6 +1,7 @@
 import React from 'react'
 import useSWR from 'swr'
 import { fetcher } from '../fetcher'
+import { Link } from 'react-router-dom';
 
 const Usuarios = () => {
     const { data, error, isLoading } = useSWR('https://jsonplaceholder.typicode.com/users', fetcher);
@@ -13,7 +14,14 @@ const Usuarios = () => {
             {isLoading ? "Carregando..." : ""}
         </div>
 
-        <ul>{data && data.map((user) => <li key={user.id}>{user.name}</li>)}</ul>
+        <ul>{data && data.map((user) => 
+            <li key={user.id}>
+              <Link to={`/usuarios/${user.id}`}>
+                {user.name}
+              </Link>
+            </li>)
+          }
+        </ul>
     </div>
   )
 }
